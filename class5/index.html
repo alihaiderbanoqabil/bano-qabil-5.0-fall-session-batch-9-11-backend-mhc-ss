@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 5 of JS</title>
+</head>
+
+<body>
+    <h1>Class 5 of JS</h1>
+    <script>
+        var isStudent = false;
+        // (function () {
+        //     var gender = "male"
+        // })()
+        // (() => {
+
+        // })()
+
+        // let gender = "male";
+        // const age = 276;
+        // console.log(window, "window");
+
+        // console.log(v1, v2, v3, "above function")
+
+        // var var1 = "hello";
+        // var1 = "hello";
+        // var n1;
+        // n1 = "hello";
+        // var n2;
+        // n2 = "world";
+        // var n1, n2;
+        // n1 = "hello";
+        // n1 = "world";
+        // n2 = "world";
+
+        // let n1, n2;
+        // n1 = "hello";
+        // n1 = "world";
+        // n2 = "world";
+
+
+        // const n1 = "const";
+        // n1 = "hello";
+        // // n1 = "world";
+        // // n2 = "world";
+
+        // console.log(n1, "n1");
+
+        // var n1 = "ali";
+        // var n2;
+        // let n1 = "ali";
+        // const n1 = "ali";
+        // var name = "haider"
+
+        // let name = "ali"
+        // let name = "haider"
+
+
+        // const name = "ali"
+        // const name = "haider"
+
+
+
+
+        // function outer() {
+        //     var v1 = "hello";
+        //     let v2 = "world";
+        //     const v3 = "ali";
+        //     console.log(v1, v2, v3, "outer  function")
+        //     function inner() {
+        //         console.log(v1, v2, v3, "inner function")
+        //     }
+        //     inner()
+
+        // }
+        // outer()
+        // name1()
+        // function name1() {
+        //     console.log("hello");
+        // }
+        // name2()
+        // const name2 = () => {
+        //     console.log("world");
+        // }
+
+        // let name = "ali";
+        let age = 28;
+        let percentage = 67.87;
+        let isTeacher = true;
+
+
+
+        // let student1 = null;
+
+        // if (age > 18) {
+        //     student1 = {
+        //         name: 'ali', city: "karachi"
+        //     }
+        // }
+        // // let v1 = undefined;
+        // let v1;
+        // v1 = "usman"
+
+
+        let student1 = {
+            name: 'ali',
+            city: "karachi",
+            age: 28,
+            // isTeacher: isTeacher,
+            isTeacher,
+            greet: function () {
+                console.log("hello");
+
+            },
+            address: {
+                city: "Karachi",
+                country: "Pakistan",
+                zipcode: 43873,
+                geo: {
+                    long: 45.76,
+                    lat: -23.64
+                }
+            },
+            hobbies: ["coding", "palying"],
+            "full name": "Ali Haider"
+        }
+        const student2 = student1;
+
+        console.log(student1, "student1");
+        console.log(student2, "student2");
+        console.log(student1.address.geo.lat);
+        console.log(student1["full name"]);
+        console.log(student1.hobbies[1]);
+        console.log(student1["address"]["geo"]["lat"]);
+
+        const cars = ["BMW", "Tesla", true, 2987, 67.98, undefined, null, student1, ["coding", "palying"]]
+        cars[1] = "Honda Civic"
+        // delete cars[1]
+        // console.log(student1)
+        console.log(cars, "cars")
+        // console.log(cars[1], "cars")
+        // console.log(cars[7], "cars")
+        // console.log(cars[10], "cars")
+
+        // console.log(typeof student1);
+        // console.log(typeof name);
+        // console.log(typeof age);
+        // console.log(typeof isStudent);
+
+        let name = "ali";
+        let myName = name;
+        // console.log(myName, "before myName");
+
+        // myName = "hasnain"
+        // console.log(myName, "after myName");
+        // console.log(name, "name");
+
+
+
+
+    </script>
+</body>
+
+</html>

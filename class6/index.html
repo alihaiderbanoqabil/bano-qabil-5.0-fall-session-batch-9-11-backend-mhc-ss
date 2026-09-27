@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 6 of JS</title>
+</head>
+
+<body>
+    <h1>Class 6 of JS</h1>
+    <script>
+        let name1 = "ali";
+        let name2 = name1;
+        name2 = "hasnain";
+        console.log(name1);
+        console.log(name2);
+
+        let student1 = {
+            name: 'ali',
+            city: "karachi",
+            age: 28,
+            // greet: function () {
+            //     console.log("hello");
+            // },
+            address: {
+                city: "Karachi",
+                country: "Pakistan",
+                zipcode: 43873,
+                // geo: {
+                //     long: 45.76,
+                //     lat: -23.64
+                // }
+            },
+            hobbies: ["coding", "palying"],
+            "full name": "Ali Haider"
+        };
+        // const student2 = student1;
+        // const student2 = {...student1};
+        // const student2 = { ...student1, address: { ...student1.address } };
+        // const student2 = JSON.parse(JSON.stringify(student1));
+        const student2 = structuredClone(student1);
+        student2.age = 50;
+        student2.city = "Lahore";
+        student2.address.city = "Pindi";
+        console.log(student1);
+        console.log(student2);
+        // function sum(n1, n2) {
+
+        // }
+        // function sum(n1, n2, n3) {
+
+        // }
+        // function sum(n1, n2, n3, n4) {
+
+        // }
+        // function sum(n1, n2, n3, n4, n5) {
+
+        // }
+        // ES6 features 
+        function sumOfNNumbers(...args) {
+            console.log(args, "args");
+
+            let sum = 0;
+            for (const element of args) {
+                sum = sum + element;
+            }
+            return sum
+        }
+        console.log(sumOfNNumbers(10, 20, 40, 50, 100));
+
+        let age = 30;
+        // let isAdult;
+        // if (age > 18) {
+        //     isAdult = true
+        // } else {
+        //     isAdult = false
+        // }
+        // Ternary operator
+        // let isAdult = age > 18 ? true : false
+        // console.log(isAdult, "isAdult");
+
+
+
+        // Nullish coalescing ?? ||
+        const PORT = 0;
+        // const PORT = 5000;
+        // let port;
+        // // if (PORT !== undefined || PORT !== null) {
+        // if (PORT) {
+        //     port = PORT
+        // } else {
+        //     port = 8000
+        // }
+        // console.log(port, "port");
+        // const port = PORT ?? 8000;
+        // const port = PORT ?? age ?? 8000;
+        // // const port = PORT || 8000;
+        // console.log(port, "port");
+
+        // Optional chaining ?.
+
+        let student = {
+            name: 'ali',
+            city: "karachi",
+            age: 28,
+            // greet: function () {
+            //     console.log("hello");
+            // },
+            address: {
+                city: "Karachi",
+                country: "Pakistan",
+                zipcode: 43873,
+                geo: {
+                    long: 45.76,
+                    lat: -23.64
+                }
+            },
+            hobbies: ["coding", "palying"],
+            "full name": "Ali Haider"
+        };
+        // console.log(student.address.geo.lat);
+        console.log(student && student.address && student.address.geo && student.address.geo.lat);
+        console.log(student?.address?.geo?.lat);
+        const name = "    Ali  Haider  ";
+        const fName = "ali";
+        const lName = "haider"
+        // console.log(fName + lName);
+        // console.log(fName + " " + lName);
+        console.log("My name is" + " " + fName + " " + lName);
+        console.log(`My name is ${fName} ${lName}`);
+        console.log(fName.concat(" ", lName, " ", "hello"));
+        console.log(fName.length);
+        console.log(name.length);
+        console.log(name.toUpperCase());
+        console.log(name.toLowerCase());
+        console.log(name.trim());
+        const cars = ["BMW", "Tesla", true, 2987, 67.98, undefined, null, student1, ["coding", "palying"]]
+
+        console.log(typeof name);
+        console.log(typeof age);
+        console.log(typeof student);
+        console.log(typeof cars);
+        console.log(Array.isArray(cars));
+        console.log(Array.isArray(student));
+        // const enteredAge = prompt("Enter your age: ")
+        // console.log(enteredAge);
+        // console.log(parseInt(enteredAge) + 10);
+        // console.log(parseFloat(enteredAge) + 10);
+        // console.log(Number(enteredAge) + 10);
+        // console.log(typeof enteredAge);
+        console.log(String(10));
+        console.log(Boolean(40));
+        console.log(Boolean(0));
+        console.log(Boolean(undefined));
+        // for (let index = 0; index < 10; index++) {
+        //     const element = array[index];
+
+        // }
+        // let index = 0;
+        // while (index < 10) {
+
+
+        //     index++
+        // }
+
+        // do {
+
+        // } while (index < 10);
+        // function sum(params) {
+
+        // }
+
+        // const sum = (params) => {
+
+        // }
+
+        // const sum = function () {
+
+        // }
+
+        function sum(n1 = 10, n2 = 20) {
+            const sum = n1 + n2
+            console.log(sum);
+            console.log(sum);
+        }
+        sum(100, 20)
+        sum()
+        sum(50)
+    </script>
+</body>
+
+</html>
