@@ -41,7 +41,7 @@ const getRequestBody = (req) => {
             try {
                 const data = body ? JSON.parse(body) : {};
                 resolve(data);
-
+                // resolve(body)
             } catch (error) {
                 reject(error);
             }
@@ -66,7 +66,7 @@ const server = http.createServer(async (req, res) => {
 
             const user = {
                 // id: randomUUID(),
-                id: users.length + 1 + "", 
+                id: users.length + 1 + "",
                 // ...body,
                 name: body.name,
                 email: body.email,
@@ -141,6 +141,7 @@ const server = http.createServer(async (req, res) => {
             }
 
             const body = await getRequestBody(req);
+            console.log(body, "body", typeof body);
 
             user.name = body.name ?? user.name;
             user.email = body.email ?? user.email;
@@ -206,3 +207,26 @@ server.listen(PORT, () => {
 // /api/users/:id get single user GET
 // /api/users/:id update user PUT/PATCH
 // /api/users/:id delete user DELETE
+
+
+
+
+// console.log('start');
+
+// async function run() {
+//     setTimeout(() => {
+//         console.log('setTimeout');
+//     }, 1000);
+
+//     const response = await fetch(
+//         'https://jsonplaceholder.typicode.com/todos/1'
+//     );
+
+//     const data = await response.json();
+
+//     console.log('fetch end');
+// }
+
+// run();
+
+// console.log('end');
