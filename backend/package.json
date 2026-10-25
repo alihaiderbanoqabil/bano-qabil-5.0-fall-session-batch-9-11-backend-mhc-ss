@@ -2,11 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "fs.js",
+  "main": "modules.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node fs.js",
-    "dev": "nodemon fs.js"
+    "dev": "nodemon modules.js",
+    "start": "node modules.js"
   },
   "keywords": [],
   "author": "",
