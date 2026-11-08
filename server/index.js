@@ -14,20 +14,27 @@ let users = [
     // },
 ];
 
+app.get("/api/health", (req, res) => {
+    return res.status(200).json({
+        status: true,
+        message: "Server is running",
+    });
+});
+
 // =========================
 // CREATE USER
 // POST /api/users
 // =========================
 app.post("/api/users", (req, res) => {
-    const { name, email, age } = req.body;
-    const user = {
-        id: users.length + 1,
-        name,
-        email,
-        age,
-    };
-
     console.log(req.body, "req.body");
+    const { name, email, age } = req.body;
+    // const user = {
+    //     id: users.length + 1,
+    //     name: name,
+    //     email: email,
+    //     age: age,
+    // };
+    const user = { id: users.length + 1, name, email, age };
 
     // const user = {
     //     id: users.length + 1,
@@ -40,7 +47,6 @@ app.post("/api/users", (req, res) => {
     //     id: users.length + 1,
     //    ...req.body
     // };
-
 
     users.push(user);
 
@@ -68,12 +74,13 @@ app.get("/api/users", (req, res) => {
 // GET /api/users/:userId
 // =========================
 app.get("/api/users/:userId", (req, res) => {
+
     console.log(req.params, "req.params");
-    
+
     const { userId } = req.params;
 
-    const user = users.find((user) => user.id === Number(userId));
-    // const user = users.find((user) => user.id === +userId);
+    // const user = users.find((user) => user.id === Number(userId));
+    const user = users.find((user) => user.id === +userId);
     // const user = users.find((user) => user.id === parseInt(userId));
 
     if (!user) {
@@ -89,15 +96,14 @@ app.get("/api/users/:userId", (req, res) => {
         data: user,
     });
 });
-
 // =========================
 // GET SINGLE POST
 // GET /api/users/:userId/posts/:postId
 // =========================
-app.get("/api/users/:userId/posts/:postId", (req, res) => {
+app.get("/api/users/:userId/posts/:postId/comments/:commentId", (req, res) => {
     console.log(req.params, "req.params");
-    
-    const { userId, postId } = req.params;
+
+    const { userId, postId, commentId } = req.params;
 
     const user = users.find((user) => user.id === Number(userId));
     // const user = users.find((user) => user.id === +userId);
@@ -116,6 +122,7 @@ app.get("/api/users/:userId/posts/:postId", (req, res) => {
         data: user,
     });
 });
+
 
 // =========================
 // UPDATE USER
@@ -165,6 +172,13 @@ app.delete("/api/users/:userId", (req, res) => {
     }
 
     const deletedUser = users.splice(userIndex, 1)[0];
+    // res.statusCode = 200;
+    // res.statusMessage = "OK";
+    // res.setHeader("Content-Type", "application/json");
+    // res.setHeaders({
+    //     "X-Custom-Header": "CustomValue",
+    //     "Cache-Control": "no-cache",
+    // });
 
     return res.status(200).json({
         status: true,
