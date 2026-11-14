@@ -25,7 +25,7 @@ app.get("/api/health", (req, res) => {
 // CREATE USER
 // POST /api/users
 // =========================
-app.post("/api/users", (req, res) => {
+app.post("/api/users/", (req, res) => {
     console.log(req.body, "req.body");
     const { name, email, age } = req.body;
     // const user = {
