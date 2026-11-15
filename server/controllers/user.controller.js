@@ -2,36 +2,10 @@ const userService = require("../services/user.service");
 // const { createUser, getAllUsers } = require("../services/user.service");
 
 // CREATE USER
-
-
-
-// const createUser = (req, res) => {
-//     try {
-//         console.log(req.body, "req.body");
-//         const { name, email, age } = req.body;
-   
-//         const user = { id: users.length + 1, name, email, age };
-
-//         users.push(user);
-
-//         return res.status(201).json({
-//             status: true,
-//             message: "User created successfully",
-//             data: user,
-//         });
-//     } catch (error) {
-//         return res.status(500).json({
-//             status: false,
-//             message: "Internal server error",
-//             error: error.message,
-//         });
-//     }
-// }
-
 const createUser = (req, res) => {
     try {
-        // const user = createUser(req.body);
         const user = userService.createUser(req.body);
+        // const user = userService.createUser(req);
 
         return res.status(201).json({
             status: true,
@@ -48,56 +22,37 @@ const createUser = (req, res) => {
 };
 
 // const createUser = (req, res) => {
-//     try {
-//         const { name, email, age } = req.body;
+//     console.log(req.body, "req.body");
+//     const { name, email, age } = req.body;
+ 
+//     const user = { id: users.length + 1, name, email, age };
 
-//         const user = {
-//             id: randomUUID(),
-//             name,
-//             email,
-//             age,
-//         };
+//     users.push(user);
 
-//         users.push(user);
-
-//         return res.status(201).json({
-//             status: true,
-//             message: "User created successfully",
-//             data: user,
-//         });
-
-//     } catch (error) {
-//         return res.status(500).json({
-//             status: false,
-//             message: "Internal server error",
-//             error: error.message,
-//         });
-//     }
+//     return res.status(201).json({
+//         status: true,
+//         message: "User created successfully",
+//         data: user,
+//     });
 // }
-
-// const createUser = (req, res, next) => {
-//     try {
-//         const user = userService.createUser(req.body);
-
-//         return res.status(201).json({
-//             status: true,
-//             message: "User created successfully",
-//             data: user,
-//         });
-//     } catch (error) {
-//         next(error);
-//     }
-// };
 
 // GET ALL USERS
 const getAllUsers = (req, res) => {
-    const users = getAllUsers();
+   try {
+     const users = userService.getAllUsers();
 
     return res.status(200).json({
         status: true,
         message: "Users fetched successfully",
         data: users,
     });
+   } catch (error) {
+        return res.status(500).json({
+            status: false,
+            message: "Internal server error",
+            error: error.message,
+        });
+   }
 };
 
 // GET SINGLE USER

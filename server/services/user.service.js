@@ -4,6 +4,14 @@ const users = require("../models/user.model");
 //         const user = { id: users.length + 1, name, email, age };
 //         users.push(user);
 
+// const createUser = (body) => {
+//     const { name, email, age } = body;
+
+//     const user = { id: randomUUID(), name, email, age };
+
+//     users.push(user);
+//     return user;
+// }
 
 // CREATE USER
 const createUser = (userData) => {
@@ -54,9 +62,9 @@ const deleteUser = (id) => {
 };
 
 module.exports = {
-    createUser: createUser,
-    getAllUsers: getAllUsers,
-    getUserById: getUserById,
-    updateUser: updateUser,
-    deleteUser: deleteUser,
+    createUser,
+    getAllUsers,
+    getUserById,
+    updateUser,
+    deleteUser,
 };
